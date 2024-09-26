@@ -2,27 +2,52 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
         android:name=".MainApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/ic_frogobox"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_frogobox"
         android:supportsRtl="true"
         android:theme="@style/Theme.Research"
-        tools:targetApi="31">
+        tools:targetApi="tiramisu">
+
         <activity
-            android:name=".ui.detail.DetailActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
+            android:name=".ui.test.TestActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.autotext.AutoTextActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.autotext.AutoTextEditorActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.autotext.AutoTextDetailActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.toggle.ToggleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.theme.ThemeActivity"
+            android:exported="false" />
+
+        <activity android:name=".ui.language.KeyboardLanguageActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.ResearchNoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,7 +58,7 @@
         <service
             android:name=".services.KeyboardIME"
             android:exported="true"
-            android:label="Frogo Keyboard"
+            android:label="@string/app_name"
             android:permission="android.permission.BIND_INPUT_METHOD">
             <meta-data
                 android:name="android.view.im"

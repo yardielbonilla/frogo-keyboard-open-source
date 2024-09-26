@@ -1,0 +1,15 @@
+<resources>
+
+    <style name="FrogoKeyboard">
+        <item name="itemTextAppearance">?attr/itemTextAppearance</item>
+    </style>
+
+    <style name="FrogoKeyboardView" parent="FrogoKeyboard">
+        <item name="keyTextSize">@dimen/keyboard_text_size</item>
+    </style>
+
+    <style name="FrogoKeyboardViewPopup" parent="FrogoKeyboard">
+        <item name="keyTextSize">@dimen/preview_text_size</item>
+    </style>
+
+</resources>
